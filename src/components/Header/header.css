@@ -1,0 +1,36 @@
+.header {
+  height: 88px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.header__back {
+  width: 56px;
+  height: 56px;
+}
+
+.header__back-icon {
+  width: 56px;
+  height: 56px;
+  background: url('./images/back.png') no-repeat;
+  background-size: contain;
+}
+
+.header__title {
+  font-size: 34px;
+  color: #333;
+  width: 70%;
+  text-align: center;
+}
+
+.header__menu {
+  width: 60px;
+  height: 60px;
+  background: url('./images/menu.png') no-repeat;
+  background-size: contain;
+}
