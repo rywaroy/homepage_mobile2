@@ -56,9 +56,7 @@
 }
 
 .menu__list-item.active {
-  /* background: #00B2EE; */
-  /* background: #00BFFF; */
-  background: rgba(0, 178, 238, .66);
+  background: rgba(0, 178, 238, .6);
 }
 
 .menu__list-icon {
