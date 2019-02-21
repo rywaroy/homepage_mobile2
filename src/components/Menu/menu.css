@@ -1,0 +1,113 @@
+.menu {
+  position: absolute;
+  width: 600px;
+  height: 100%;
+  background: #000;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  transition: all .3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__box {
+  width: 100%;
+  height: 100%;
+  background: url('./images/bg.jpeg') no-repeat;
+  background-size: cover;
+  filter: blur(20px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.menu.show {
+  transform: translateX(0);
+}
+
+.menu__user {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu__user-avatar {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: url('./images/logo.jpg') no-repeat;
+  background-size: contain;
+}
+
+.menu__list {
+  flex: 1;
+}
+
+.menu__list-item {
+  height: 120px;
+  padding-left: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.menu__list-item.active {
+  /* background: #00B2EE; */
+  /* background: #00BFFF; */
+  background: rgba(0, 178, 238, .66);
+}
+
+.menu__list-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 24px;
+}
+
+.menu__list-icon.learn {
+  background: url('./images/learn.png') no-repeat;
+  background-size: contain;
+}
+
+.menu__list-icon.article {
+  background: url('./images/article.png') no-repeat;
+  background-size: contain;
+}
+
+.menu__list-icon.album {
+  background: url('./images/album.png') no-repeat;
+  background-size: contain;
+}
+
+.menu__list-icon.think {
+  background: url('./images/think.png') no-repeat;
+  background-size: contain;
+}
+
+.menu__list-icon.one {
+  background: url('./images/one.png') no-repeat;
+  background-size: contain;
+}
+
+.menu__list-icon.huaban {
+  background: url('./images/huaban.png') no-repeat;
+  background-size: contain;
+}
+
+.menu__list-icon.zhihu {
+  background: url('./images/zhihu.png') no-repeat;
+  background-size: contain;
+}
+
+.menu__list-icon.douban {
+  background: url('./images/douban.png') no-repeat;
+  background-size: contain;
+}
+
+.menu__list-txt {
+  font-size: 30px;
+  color: #fff;
+}
