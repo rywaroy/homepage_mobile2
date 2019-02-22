@@ -55,7 +55,7 @@
   align-items: center;
 }
 
-.menu__list-item.active {
+.menu__list-item.router-link-active {
   background: rgba(0, 178, 238, .6);
 }
 

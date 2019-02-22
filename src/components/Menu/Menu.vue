@@ -6,14 +6,14 @@
     </div>
     <div class="menu__list m-scroll">
       <ul>
-        <li class="menu__list-item active">
+        <router-link tag="li" :to="{name: 'learn'}" class="menu__list-item">
           <i class="menu__list-icon learn"></i>
           <span class="menu__list-txt">学习笔记</span>
-        </li>
-        <li class="menu__list-item">
+        </router-link>
+        <router-link tag="li" :to="{name: 'article'}" class="menu__list-item">
           <i class="menu__list-icon article"></i>
           <span class="menu__list-txt">日志</span>
-        </li>
+        </router-link>
         <li class="menu__list-item">
           <i class="menu__list-icon album"></i>
           <span class="menu__list-txt">相册</span>
