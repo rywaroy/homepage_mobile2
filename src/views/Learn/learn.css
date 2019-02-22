@@ -1,0 +1,69 @@
+.learn__item {
+  background: #fff;
+  padding: 30px;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+.learn__item-top {
+  display: flex;
+}
+
+.learn__item-left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.learn__item-right {
+  display: flex;
+  margin-left: 16px;
+}
+
+.learn__item-tag {
+  font-size: 24px;
+  padding: 0 10px;
+  margin-right: 8px;
+  line-height: 32px;
+  height: 32px;
+  text-align: center;
+  color: #fff;
+  border-radius: 8px;
+  margin-top: 8px;
+  background: #89cff0;
+}
+
+.learn__item-title {
+  font-size: 32px;
+  line-height: 48px;
+  color: #333;
+}
+
+.learn__item-time {
+  font-size: 24px;
+  color: #999;
+  line-height: 36px;
+  margin-top: 10px;
+}
+
+.learn__item-intro {
+  font-size: 24px;
+  color: #666;
+  line-height: 36px;
+  margin-top: 16px;
+}
+
+.learn__item-bot {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.learn__item-watch {
+  font-size: 24px;
+  color: #666;
+  padding-left: 40px;
+  line-height: 40px;
+  margin-top: 8px;
+  background: url('./images/watch.png') no-repeat left center;
+}
