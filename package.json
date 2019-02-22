@@ -10,7 +10,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "better-scroll": "^1.14.1",
+    "dayjs": "^1.8.6",
     "mint-ui": "^2.2.13",
+    "qs": "^6.6.0",
     "vue": "^2.5.22",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -49,7 +51,9 @@
       "arrow-parens": 0,
       "no-unneeded-ternary": 0,
       "no-plusplus": 0,
-      "no-shadow": 0
+      "no-shadow": 0,
+      "import/prefer-default-export": 0,
+      "import/order": 0
     },
     "parserOptions": {
       "parser": "babel-eslint"
@@ -59,7 +63,8 @@
     "plugins": {
       "autoprefixer": {},
       "postcss-px2rem": {
-        "remUnit": 75
+        "remUnit": 75,
+        "exclude": "/src/views/LearnInfo/markdown.css"
       }
     }
   },
