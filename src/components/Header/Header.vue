@@ -4,7 +4,7 @@
       <div class="header__back-icon" v-if="back" @click="goBack()"></div>
     </div>
     <div class="header__title text-ovh">{{title}}</div>
-    <div class="header__menu" @click="openMenu()"></div>
+    <div :class="['header__menu', {active: isShowMenu}]" @click="openMenu()"></div>
   </div>
 </template>
 
