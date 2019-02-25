@@ -1,0 +1,21 @@
+.learn-info {
+  padding-top: 30px;
+  background: #fff;
+}
+
+.learn-content {
+  padding: 0 30px;
+  margin-top: 40px;
+  min-height: 800px;
+}
+
+.learn-content img {
+  max-width: 100%;
+}
+
+.learn-write {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  margin-bottom: 20px;
+}
