@@ -25,6 +25,9 @@ export default {
       this.getList();
     },
     loadBottom() { // 上拉加载
+      if (!this.canScroll) {
+        return;
+      }
       this.page++;
       this.getList();
     },
