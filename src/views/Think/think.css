@@ -1,0 +1,52 @@
+.think__item {
+  background: #fff;
+  padding: 30px;
+  margin-top: 10px;
+}
+
+.think__item-top {
+  display: flex;
+}
+
+.think__item-avatar {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.think__item-name {
+  font-size: 32px;
+  line-height: 60px;
+  color: #333;
+}
+
+.think__item-time {
+  font-size: 28px;
+  color: #999;
+  line-height: 36px;
+  margin-top: 20px;
+}
+
+.think__item-content {
+  font-size: 30px;
+  color: #666;
+  line-height: 36px;
+  margin-top: 32px;
+}
+
+.think__item-photos {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.think__item-photo {
+  width: 32%;
+  height: 0;
+  padding-bottom: 32%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
