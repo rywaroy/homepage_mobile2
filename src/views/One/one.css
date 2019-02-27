@@ -1,0 +1,43 @@
+.one__item {
+  background: #fff;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.one__tag {
+  text-align: center;
+  color: #999;
+  font-size: 28px;
+  line-height: 40px;
+}
+
+.one__title {
+  font-size: 32px;
+  line-height: 48px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.one__author {
+  font-size: 24px;
+  color: #999;
+  line-height: 36px;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.one__author.tac {
+  text-align: center;
+}
+
+.one__img {
+  display: block;
+}
+
+.one__forward {
+  font-size: 26px;
+  line-height: 44px;
+  color: #666;
+  margin-top: 16px;
+}
