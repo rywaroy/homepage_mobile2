@@ -1,0 +1,20 @@
+.zhihu__item {
+  background: #fff;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+
+.zhihu__item-title {
+  padding: 20px 30px;
+  font-size: 28px;
+  line-height: 48px;
+  color: #333;
+}
+
+.zhihu__item img {
+  display: block;
+}
+
+.zhihu__content {
+  padding: 0 30px;
+}
