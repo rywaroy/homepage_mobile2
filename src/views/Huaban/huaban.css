@@ -1,0 +1,19 @@
+.huaban__item {
+  padding: 0 30px;
+  margin-bottom: 20px;
+}
+
+.huaban__item img {
+  display: block;
+}
+
+.huaban__refresh {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 96px;
+  height: 96px;
+  background: url('./images/refresh.png') no-repeat;
+  background-size: contain;
+  z-index: 5;
+}
