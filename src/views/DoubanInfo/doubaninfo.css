@@ -1,0 +1,26 @@
+.douban__people {
+  width: 50%;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.douban__people-name {
+  font-size: 24px;
+  line-height: 48px;
+  color: #333;
+}
+
+.douban__actors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.douban__infos {
+  font-size: 28px;
+  line-height: 48px;
+  color: #666;
+}
+
+.douban__infos-text {
+  margin-right: 12px;
+}
