@@ -1,0 +1,30 @@
+.douban__item {
+  padding: 30px;
+  background: #fff;
+  margin-bottom: 16px;
+}
+
+.douban__item-span {
+  margin-right: 10px;
+}
+
+.douban__item-title {
+  margin-top: 10px;
+  font-size: 32px;
+  line-height: 48px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.douban__item-intro {
+  font-size: 28px;
+  line-height: 48px;
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.douban__item-p {
+  font-size: 28px;
+  line-height: 48px;
+  color: #999;
+}
