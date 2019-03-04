@@ -14,30 +14,30 @@
           <i class="menu__list-icon article"></i>
           <span class="menu__list-txt">日志</span>
         </router-link>
-        <li class="menu__list-item">
+        <router-link tag="li" :to="{name: 'album'}" class="menu__list-item">
           <i class="menu__list-icon album"></i>
           <span class="menu__list-txt">相册</span>
-        </li>
-        <li class="menu__list-item">
+        </router-link>
+        <router-link tag="li" :to="{name: 'think'}" class="menu__list-item">
           <i class="menu__list-icon think"></i>
           <span class="menu__list-txt">说说</span>
-        </li>
-        <li class="menu__list-item">
+        </router-link>
+        <router-link tag="li" :to="{name: 'one'}" class="menu__list-item">
           <i class="menu__list-icon one"></i>
           <span class="menu__list-txt">ONE · 一个</span>
-        </li>
-        <li class="menu__list-item">
+        </router-link>
+        <router-link tag="li" :to="{name: 'huaban'}" class="menu__list-item">
           <i class="menu__list-icon huaban"></i>
           <span class="menu__list-txt">花瓣相册</span>
-        </li>
-        <li class="menu__list-item">
+        </router-link>
+        <router-link tag="li" :to="{name: 'zhihu'}" class="menu__list-item">
           <i class="menu__list-icon zhihu"></i>
           <span class="menu__list-txt">知乎日报</span>
-        </li>
-        <li class="menu__list-item">
+        </router-link>
+        <router-link tag="li" :to="{name: 'douban'}" class="menu__list-item">
           <i class="menu__list-icon douban"></i>
           <span class="menu__list-txt">豆瓣电影</span>
-        </li>
+        </router-link>
       </ul>
     </div>
   </menu>
