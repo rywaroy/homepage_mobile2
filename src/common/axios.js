@@ -35,7 +35,7 @@ Axios.interceptors.request.use(
 // 返回状态判断(添加响应拦截器)
 Axios.interceptors.response.use(
   res => {
-    if (res.data.status !== 200) {
+    if (res.data.status !== 200 && res.data.code !== 1) {
       Toast(res.data.msg);
       return Promise.reject(res.data.Msg);
     }
