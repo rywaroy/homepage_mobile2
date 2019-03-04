@@ -2,7 +2,7 @@
   <div id="app">
     <div :class="['main', {hide: isShowMenu}]">
       <transition :name="transitionName">
-        <keep-alive exclude="learnInfo,articleInfo">
+        <keep-alive exclude="learnInfo,articleInfo,albumGroup,oneInfo,zhihuInfo,doubanInfo">
           <router-view class="m-body"/>
         </keep-alive>
       </transition>
@@ -20,6 +20,11 @@ export default {
     return {
       transitionName: '',
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      document.querySelector('.loading').classList.add('hide');
+    }, 1000);
   },
   methods: {
     closeMenu() { // 关闭菜单
