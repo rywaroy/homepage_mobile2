@@ -6,7 +6,6 @@ import router from './router';
 import store from './store/store';
 import 'mint-ui/lib/style.css';
 import './assets/style/common.css';
-import './assets/style/loading.css';
 
 Vue.prototype.$loading = Indicator;
 Vue.prototype.$toast = Toast;

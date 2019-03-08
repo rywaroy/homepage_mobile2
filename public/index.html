@@ -1,15 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="referrer" content="no-referrer"/>
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>主页</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="referrer" content="no-referrer" />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>主页</title>
+  <style>
+    .loading {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: 99;
+      display: flex;
+      flex-wrap: wrap;
+      background: #79b6d5;
+      opacity: 1;
+      transition: opacity .5s;
+    }
+
+    .loading.hide {
+      opacity: 0;
+    }
+
+    .loading__car-box {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-bottom: 1PX solid #fff;
+      z-index: 5;
+    }
+
+    .loading__car {
+      margin: 0 auto;
+      width: 64px;
+      position: relative;
+    }
+
+    .loading__car-left {
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      left: 6px;
+      bottom: -3px;
+      animation: circle 1.5s infinite linear;
+    }
+
+    .loading__car-left::after {
+      content: ' ';
+      width: 7px;
+      height: 1px;
+      background: #79b6d5;
+      position: absolute;
+      top: 7px;
+      right: 0;
+    }
+
+    .loading__car-right {
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      right: 4px;
+      bottom: -3px;
+      animation: circle 1.5s infinite linear;
+    }
+
+    .loading__car-right::after {
+      content: ' ';
+      width: 7px;
+      height: 1px;
+      background: #79b6d5;
+      position: absolute;
+      top: 7px;
+      left: 0;
+    }
+
+    .loading__car-body {
+      width: 64px;
+      height: 31px;
+      background: url(http://static.3zsd.com/car.png) no-repeat;
+      background-size: contain;
+      animation: shock 1.5s infinite linear;
+    }
+
+    @keyframes circle {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes shock {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-2px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <div class="loading" id="loading">
+    <div class="loading__car-box">
+      <div class="loading__car">
+        <div class="loading__car-body"></div>
+        <div class="loading__car-left"></div>
+        <div class="loading__car-right"></div>
+      </div>
+    </div>
+  </div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>

@@ -23,8 +23,11 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      document.querySelector('.loading').classList.add('hide');
+      document.getElementById('loading').classList.add('hide');
     }, 1000);
+    setTimeout(() => {
+      document.getElementById('loading').remove();
+    }, 1500);
   },
   methods: {
     closeMenu() { // 关闭菜单
