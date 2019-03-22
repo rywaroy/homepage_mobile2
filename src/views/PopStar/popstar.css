@@ -1,0 +1,26 @@
+.c-popstar__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-popstar__title {
+  text-align: center;
+  font-size: 60px;
+  line-height: 60px;
+  text-align: center;
+  padding: 40px;
+}
+
+.c-popstar__target {
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.c-popstar__box {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-end;
+}

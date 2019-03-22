@@ -14,6 +14,7 @@ import Zhihu from '@/views/Zhihu/Zhihu.vue';
 import ZhihuInfo from '@/views/ZhihuInfo/ZhihuInfo.vue';
 import Douban from '@/views/Douban/Douban.vue';
 import DoubanInfo from '@/views/DoubanInfo/DoubanInfo.vue';
+import PopStar from '@/views/PopStar/PopStar.vue';
 
 Vue.use(Router);
 
@@ -163,6 +164,15 @@ export default new Router({
       meta: {
         level: 10,
         title: '豆瓣电影详情',
+      },
+    },
+    {
+      path: '/game/popstar',
+      name: 'popStar',
+      component: PopStar,
+      meta: {
+        level: 30,
+        title: '消灭星星',
       },
     },
   ],
