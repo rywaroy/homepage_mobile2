@@ -15,6 +15,7 @@ import ZhihuInfo from '@/views/ZhihuInfo/ZhihuInfo.vue';
 import Douban from '@/views/Douban/Douban.vue';
 import DoubanInfo from '@/views/DoubanInfo/DoubanInfo.vue';
 import PopStar from '@/views/PopStar/PopStar.vue';
+import KnifeHit from '@/views/KnifeHit/KnifeHit.vue';
 
 Vue.use(Router);
 
@@ -172,7 +173,16 @@ export default new Router({
       component: PopStar,
       meta: {
         level: 30,
-        title: '消灭星星',
+        title: '消灭方块',
+      },
+    },
+    {
+      path: '/game/knifehit',
+      name: 'knifeHit',
+      component: KnifeHit,
+      meta: {
+        level: 30,
+        title: '爱的魔力转圈圈',
       },
     },
   ],

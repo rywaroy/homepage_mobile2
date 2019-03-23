@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
-import { Indicator, Toast, Lazyload } from 'mint-ui';
+import { Indicator, Toast, Lazyload, MessageBox } from 'mint-ui';
 import dayjs from 'dayjs';
 import router from './router';
 import store from './store/store';
@@ -9,6 +9,7 @@ import './assets/style/common.css';
 
 Vue.prototype.$loading = Indicator;
 Vue.prototype.$toast = Toast;
+Vue.prototype.$msg = MessageBox;
 Vue.config.productionTip = false;
 
 Vue.use(Lazyload);

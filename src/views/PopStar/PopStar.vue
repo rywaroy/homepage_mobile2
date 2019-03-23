@@ -14,7 +14,6 @@
 
 <script>
 import Header from '@/components/Header/Header.vue';
-import { MessageBox } from 'mint-ui';
 
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
@@ -415,7 +414,7 @@ export default {
         this.init();
         this.start();
       } else {
-        MessageBox({
+        this.$msg({
           message: `游戏结束，总得分：${this.score}分，是否重新开始?`,
           confirmButtonText: '重新开始',
           cancelButtonText: '离开',
