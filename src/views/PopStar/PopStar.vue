@@ -76,24 +76,25 @@ export default {
      * 绑定事件
      */
     bind() {
-      this.canvas.addEventListener('touchstart', (e) => {
-        if (this.disable) {
-          return;
-        }
-        this.disable = true;
-        const x = e.targetTouches[0].clientX;
-        const y = e.targetTouches[0].clientY;
-        if (y < this.canvas.height - hn * unit) {
-          return;
-        }
-        const yi = parseInt((screenHeight - y) / unit, 10);
-        const xi = parseInt(x / unit, 10);
-        if (this.stars[xi] && this.stars[xi][yi]) {
-          this.findTarge(xi, yi);
-        } else {
-          this.disable = false;
-        }
-      });
+      this.canvas.addEventListener('touchstart', this.touchEvent);
+    },
+    touchEvent(e) {
+      if (this.disable) {
+        return;
+      }
+      this.disable = true;
+      const x = e.targetTouches[0].clientX;
+      const y = e.targetTouches[0].clientY;
+      if (y < this.canvas.height - hn * unit) {
+        return;
+      }
+      const yi = parseInt((screenHeight - y) / unit, 10);
+      const xi = parseInt(x / unit, 10);
+      if (this.stars[xi] && this.stars[xi][yi]) {
+        this.findTarge(xi, yi);
+      } else {
+        this.disable = false;
+      }
     },
     /**
      * 开始游戏
@@ -405,7 +406,9 @@ export default {
           }
         }
       }
-      this.score += (2000 - num * num * 20);
+      if (num < 10) {
+        this.score += (2000 - num * num * 20);
+      }
       if (this.score >= this.targetScore) {
         this.level++;
         this.$toast(`第${this.level}关`);
@@ -452,6 +455,9 @@ export default {
   },
   components: {
     MyHeader: Header,
+  },
+  beforeDestroy() {
+    this.canvas.removeEventListener('touchstart', this.touchEvent);
   },
 };
 </script>
