@@ -22,6 +22,10 @@
           <i class="menu__list-icon think"></i>
           <span class="menu__list-txt">说说</span>
         </router-link>
+        <router-link tag="li" :to="{name: 'game'}" class="menu__list-item">
+          <i class="menu__list-icon game"></i>
+          <span class="menu__list-txt">小游戏</span>
+        </router-link>
         <router-link tag="li" :to="{name: 'one'}" class="menu__list-item">
           <i class="menu__list-icon one"></i>
           <span class="menu__list-txt">ONE · 一个</span>

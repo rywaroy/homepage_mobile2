@@ -105,6 +105,11 @@
   background-size: contain;
 }
 
+.menu__list-icon.game {
+  background: url('./images/game.png') no-repeat;
+  background-size: contain;
+}
+
 .menu__list-txt {
   font-size: 30px;
   color: #fff;

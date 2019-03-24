@@ -1,0 +1,26 @@
+.game__list {
+  padding: 30px;
+}
+
+.game__item {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.game__item.popstar {
+  background: rgb(254, 76, 101);
+}
+
+.game__item.knifehit {
+  background: rgb(249, 205, 173);
+}
+
+.game__item.stupidbird {
+  background: rgb(131, 175, 155);
+}

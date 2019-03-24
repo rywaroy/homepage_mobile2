@@ -20,6 +20,7 @@ const aw = 10; // 箭头宽
 const ah = 50; // 箭头长
 
 export default {
+  name: 'knifeHit',
   data() {
     return {
       id: null,

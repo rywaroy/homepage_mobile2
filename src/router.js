@@ -16,6 +16,8 @@ import Douban from '@/views/Douban/Douban.vue';
 import DoubanInfo from '@/views/DoubanInfo/DoubanInfo.vue';
 import PopStar from '@/views/PopStar/PopStar.vue';
 import KnifeHit from '@/views/KnifeHit/KnifeHit.vue';
+import StupidBird from '@/views/StupidBird/StupidBird.vue';
+import Game from '@/views/Game/Game.vue';
 
 Vue.use(Router);
 
@@ -183,6 +185,24 @@ export default new Router({
       meta: {
         level: 30,
         title: '爱的魔力转圈圈',
+      },
+    },
+    {
+      path: '/game/stupidbird',
+      name: 'stupidBird',
+      component: StupidBird,
+      meta: {
+        level: 30,
+        title: 'stupidbird',
+      },
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: Game,
+      meta: {
+        level: 1,
+        title: '小游戏',
       },
     },
   ],

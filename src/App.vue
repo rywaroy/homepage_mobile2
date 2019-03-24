@@ -2,7 +2,7 @@
   <div id="app">
     <div :class="['main', {hide: isShowMenu}]">
       <transition :name="transitionName">
-        <keep-alive exclude="learnInfo,articleInfo,albumGroup,oneInfo,zhihuInfo,doubanInfo">
+        <keep-alive exclude="learnInfo,articleInfo,albumGroup,oneInfo,zhihuInfo,doubanInfo,stupidBird,knifeHit,popStar">
           <router-view class="m-body"/>
         </keep-alive>
       </transition>

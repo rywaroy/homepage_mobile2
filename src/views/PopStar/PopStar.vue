@@ -25,6 +25,7 @@ if (unit % 2 === 1) {
 }
 
 export default {
+  name: 'popStar',
   data() {
     return {
       level: 1,
