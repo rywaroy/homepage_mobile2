@@ -24,3 +24,7 @@
 .game__item.stupidbird {
   background: rgb(131, 175, 155);
 }
+
+.game__item.gobang {
+  background: #5ca0d3;
+}

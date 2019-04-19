@@ -136,6 +136,7 @@ export default {
             confirmButtonText: '重新开始',
             cancelButtonText: '离开',
             showCancelButton: true,
+            closeOnClickModal: false,
           }).then(action => {
             if (action === 'confirm') {
               this.level = 1;
