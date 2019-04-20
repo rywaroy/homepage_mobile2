@@ -96,9 +96,9 @@ export default {
     setTimeout(() => {
       this.cx = this.canvas.getBoundingClientRect().left;
       this.cy = this.canvas.getBoundingClientRect().top;
+      this.midx = this.canvas.width / 2 + this.cx;
+      this.midy = this.canvas.height / 2 + this.cy;
     }, 800);
-    this.midx = this.canvas.width / 2 + this.cx;
-    this.midy = this.canvas.height / 2 + this.cy;
     this.bind();
     this.drawBoard();
   },
