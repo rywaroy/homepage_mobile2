@@ -1,6 +1,6 @@
 <template>
   <div>
-    <my-header title="五子棋2.0" :back="true"></my-header>
+    <my-header :title="`五子棋2.0(${mode === 1 ? '标准' : '换手'})`" :back="true"></my-header>
     <div class="gobang__tip">
       <span class="gobang__tip-link" @click="showTip = true">先看看->游戏说明</span>
     </div>
@@ -39,7 +39,7 @@
           <p>1.大改逻辑，比16年版本提升50智商</p>
           <p></p>
           <p>2.新增一种落子模式：拖动落子</p>
-          <p>点击屏幕会在棋盘中央生成绿色棋子，移动手指改变棋子位置，移开手指则在指定位置落子</p>
+          <p>点击屏幕会在棋盘中央生成绿色棋子，移动手指改变棋子位置，移开手指则在指定位置落子（部分浏览器不支持）</p>
           <p></p>
           <p>3.新增一种玩法：换子模式</p>
           <p>为了防止必胜开局，后手（白子）可以在第4手选择与对方交互棋子来破坏对方的优势开局（其实没什么用，我就判断了2个必胜开局，其他的微优势开局我也不在乎~）</p>
@@ -328,7 +328,7 @@ export default {
         }
         if (!this.isOver && !auto) {
           this.isPlay = false; // 交换
-          this.pcPlaying();
+          this.pcPlaying(undefined, undefined);
         }
       }
     },
@@ -349,7 +349,7 @@ export default {
         this.drawTargeChess(xi, yi);
       }
     },
-    pcPlaying(i, j) { // 电脑回合
+    pcPlaying(i, j, auto = false) { // 电脑回合
       this.step++;
       const playScore = [];
       const pcScore = [];
@@ -449,7 +449,7 @@ export default {
         u = i;
         v = j;
       }
-      if (this.mode === 2 && this.step === 4) { // 还手回合
+      if (this.mode === 2 && this.step === 4 && !auto) { // 还手回合
         if (pm > 3100) {
           this.$toast('电脑觉得你很有潜力，决定跟你换子，请你继续落子');
           this.changeChess();
@@ -636,7 +636,7 @@ export default {
         const step3 = pcStack.shift();
         this.boardChessDownEvent(null, step3.split(',')[0], step3.split(',')[1], true);
         this.isPlay = false;
-        this.pcPlaying();
+        this.pcPlaying(undefined, undefined, true);
         this.showChangeBox = false;
       }
     },
