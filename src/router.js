@@ -18,6 +18,7 @@ import PopStar from '@/views/PopStar/PopStar.vue';
 import KnifeHit from '@/views/KnifeHit/KnifeHit.vue';
 import StupidBird from '@/views/StupidBird/StupidBird.vue';
 import Game from '@/views/Game/Game.vue';
+import Gobang from '@/views/Gobang/Gobang.vue';
 
 Vue.use(Router);
 
@@ -203,6 +204,15 @@ export default new Router({
       meta: {
         level: 1,
         title: '小游戏',
+      },
+    },
+    {
+      path: '/game/gobang',
+      name: 'gobang',
+      component: Gobang,
+      meta: {
+        level: 30,
+        title: '五子棋2.0',
       },
     },
   ],

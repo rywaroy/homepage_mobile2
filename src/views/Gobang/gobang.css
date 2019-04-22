@@ -1,0 +1,167 @@
+.gobang__sign {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
+
+.gobang__small-btn {
+  width: 200px;
+  height: 68px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 32px;
+  color: #666;
+  line-height: 69px;
+  border: 1PX solid #666;
+  margin-right: 30px;
+}
+
+.gobang__small-btn.active {
+  background: #89cff0;
+  color: #fff;
+  border-color: #89cff0;
+}
+
+.gobang__bot {
+  height: 80px;
+  display: flex;
+}
+
+.gobang__bot-btn {
+  flex: 1;
+  font-size: 40px;
+  color: #fff;
+  line-height: 80px;
+  text-align: center;
+}
+
+.gobang__bot-btn.first {
+  background: #89cff0;
+}
+
+.gobang__bot-btn.last {
+  background: #c5fad9;
+}
+
+.gobang__change {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.gobang__change-box {
+  height: 300px;
+  background: #fff;
+  padding: 30px 60px;
+}
+
+.gobang__change-text {
+  font-size: 36px;
+  line-height: 42px;
+  color: #444;
+  margin-bottom: 70px;
+}
+
+.gobang__change-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 60px; */
+}
+
+.gobang__change-btn {
+  width: 280px;
+  height: 68px;
+  text-align: center;
+  font-size: 32px;
+  line-height: 68px;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.gobang__change-btns .gobang__change-btn:first-child {
+  background: #89cff0;
+}
+
+.gobang__change-btns .gobang__change-btn:last-child {
+  background: #c5fad9;
+}
+
+.gobang__content {
+  display: table-cell;
+  text-align: center;
+}
+
+.gobang__tip {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+.gobang__tip-link {
+  font-size: 32px;
+  line-height: 50px;
+  color: red;
+  padding: 10px 0;
+}
+
+.gobang__tip-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, .5);
+}
+
+.gobang__tip-box {
+  width: 500px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gobang__tip-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  line-height: 40px;
+  color: #444;
+  height: 80px;
+  border-bottom: 1PX solid #e5e5e5;
+}
+
+.gobang__tip-content {
+  padding: 0 30px;
+}
+
+.gobang__tip-content p {
+  font-size: 30px;
+  line-height: 36px;
+  margin: 20px 0;
+  color: #444;
+}
+
+.gobang__tip-btn {
+  height: 80px;
+  font-size: 32px;
+  line-height: 40px;
+  color: #89cff0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1PX solid #e5e5e5;
+}
