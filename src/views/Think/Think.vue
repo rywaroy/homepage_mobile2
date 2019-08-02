@@ -25,7 +25,7 @@
               <div class="think__item-photos" v-if="item.photos.length > 0">
                 <div class="think__item-photo bg-cover" v-for="(photo, p) in item.photos" :key="p" :style="{backgroundImage: `url(${photo}?imageView2/1/w/210/h/210/q/75)`}"></div>
               </div>
-              <div class="think__item-time">{{item.time | time}}</div>
+              <div class="think__item-time">{{item.updatedAt | time}}</div>
             </div>
           </ul>
         </div>
