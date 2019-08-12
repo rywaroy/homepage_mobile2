@@ -22,7 +22,8 @@
                 <div class="learn__item-time">{{item.updatedAt | time}}</div>
               </div>
               <div class="learn__item-right">
-                <div class="learn__item-tag">{{item.tag}}</div>
+                <div class="learn__item-tag">{{item.sign}}</div>
+                <div class="learn__item-tag" :style="{ background: item.tag.color }">{{item.tag.title}}</div>
               </div>
             </div>
             <div class="learn__item-intro">{{item.intro}}</div>
