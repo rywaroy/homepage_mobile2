@@ -14,6 +14,7 @@
 
 <script>
 import Menu from '@/components/Menu/Menu.vue';
+import { apiGetBase } from '@/api/api';
 
 export default {
   data() {
@@ -28,6 +29,7 @@ export default {
     setTimeout(() => {
       document.getElementById('loading').remove();
     }, 1500);
+    apiGetBase();
   },
   methods: {
     closeMenu() { // 关闭菜单

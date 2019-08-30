@@ -97,3 +97,8 @@ export const apiGetDouban = params => (
 export const apiGetDoubanInfo = id => (
   axios.get(`/douban/info?id=${id}`)
 );
+
+// 获取基本信息
+export const apiGetBase = () => (
+  axios.get('/base/content')
+);
