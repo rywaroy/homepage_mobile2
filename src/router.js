@@ -19,6 +19,7 @@ import KnifeHit from '@/views/KnifeHit/KnifeHit.vue';
 import StupidBird from '@/views/StupidBird/StupidBird.vue';
 import Game from '@/views/Game/Game.vue';
 import Gobang from '@/views/Gobang/Gobang.vue';
+import Jump from '@/views/Jump/Jump.vue';
 
 Vue.use(Router);
 
@@ -213,6 +214,15 @@ export default new Router({
       meta: {
         level: 30,
         title: '五子棋2.0',
+      },
+    },
+    {
+      path: '/game/jump',
+      name: 'jump',
+      component: Jump,
+      meta: {
+        level: 30,
+        title: 'Jump Jump',
       },
     },
   ],
