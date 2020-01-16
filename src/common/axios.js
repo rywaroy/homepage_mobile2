@@ -6,7 +6,8 @@ import qs from 'qs';
 const Axios = axios.create({
   // baseURL: 'http://localhost:3001/api/',
   // baseURL: 'http://www.3zsd.com/api/',
-  baseURL: 'https://www.3zsd.com/api/',
+  // baseURL: 'https://www.3zsd.com/api/',
+  baseURL: 'https://www.zzh.cool/api/',
   timeout: 100000,
   responseType: 'json',
   //   withCredentials: true, // 是否允许带cookie这些
