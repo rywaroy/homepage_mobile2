@@ -19,7 +19,7 @@
             <div class="learn__item-top">
               <div class="learn__item-left">
                 <div class="learn__item-title">{{item.title}}</div>
-                <div class="learn__item-time">{{item.updatedAt | time}}</div>
+                <div class="learn__item-time">{{item.createdAt | time}}</div>
               </div>
               <div class="learn__item-right">
                 <div class="learn__item-tag">{{item.sign}}</div>
