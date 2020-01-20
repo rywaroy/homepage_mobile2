@@ -22,7 +22,7 @@
                 <h3 class="article__title">{{item.title}}</h3>
                 <p class="article__intro">{{item.intro}}</p>
                 <div class="article__bot">
-                  <p class="article__time">{{item.updatedAt | time}}&nbsp;&nbsp; 「<span :style="{color: item.tag.color}">{{item.tag.title}}</span>」</p>
+                  <p class="article__time">{{item.createdAt | time}}&nbsp;&nbsp; 「<span :style="{color: item.tag.color}">{{item.tag.title}}</span>」</p>
                   <div class="article__like">{{item.likes}}</div>
                 </div>
               </div>
