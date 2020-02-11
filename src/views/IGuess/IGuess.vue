@@ -13,7 +13,7 @@
         <div :class="['guess__list-item', item.select ? 'disable' : '']" v-for="item in list" :key="item.tid" @click="selectAnswar(item)">{{item.title}}</div>
       </div>
       <div class="guess__button-box">
-        <div class="guess__button">提交回答</div>
+        <div class="guess__button" @click="verify()">提交回答</div>
       </div>
       <div class="guess__table">
         <table>
@@ -101,7 +101,7 @@ export default {
     };
   },
   mounted() {
-    this.init();
+    this.reset();
   },
   methods: {
     // 初始化
@@ -113,11 +113,15 @@ export default {
       for (let i = 0; i < this.list.length; i++) {
         this.list[i].select = false;
       }
+    },
+    // 重新开始
+    reset() {
+      this.init();
       this.right = this.shuffle();
     },
     // 洗牌
     shuffle() {
-      const list = [1, 2, 3, 4, 5, 6];
+      const list = [0, 1, 2, 3, 4, 5];
       for (let i = 5; i >= 0; i--) {
         const randomIndex = Math.floor(Math.random() * (i + 1));
         const itemAtIndex = list[randomIndex];
@@ -125,7 +129,11 @@ export default {
         list[randomIndex] = list[i];
         list[i] = itemAtIndex;
       }
-      return list.slice(0, 3);
+      const rightArr = [];
+      for (let i = 0; i < 3; i++) {
+        rightArr[i] = this.list[list[i]];
+      }
+      return rightArr;
     },
     // 选择答案
     selectAnswar(item) {
@@ -159,6 +167,37 @@ export default {
           item.select = false;
         }
       });
+    },
+    // 验证回答
+    verify() {
+      if (this.tryList.length >= 6) {
+        this.$toast('尝试次数已经用完');
+        return;
+      }
+      const res = this.answar.every(item => item.gid);
+      if (!res) {
+        this.$toast('请将回答填写完整');
+      }
+      // const answar = this.answar.map(item => item.gid);
+      let rightNum = 0;
+      let positionNum = 0;
+      for (let i = 0; i < this.answar.length; i++) {
+        if (this.answar[i].gid === this.right[i].gid) {
+          positionNum++;
+        }
+        for (let j = 0; j < this.right.length; j++) {
+          if (this.answar[i].gid === this.right[j].gid) {
+            rightNum++;
+            break;
+          }
+        }
+      }
+      this.tryList.push({
+        rightNum,
+        positionNum,
+        content: this.answar.map(item => item.content).join(','),
+      });
+      this.init();
     },
   },
   components: {
