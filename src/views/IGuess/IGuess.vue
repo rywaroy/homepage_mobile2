@@ -8,8 +8,16 @@
       <div class="guess__answer">
         <div class="guess__answer-item" v-for="item in answer" :key="item.id" @click="cancelAnswer(item)">{{item.content}}</div>
       </div>
-      <p class="guess__list-tip">点击选择</p>
-      <div class="guess__list">
+      <p class="guess__list-tip">
+        <span>点击选择</span>
+        <span class="link" @click="edit()">{{showEdit ? '完成' : '自定义文字'}}</span>
+      </p>
+      <div class="guess__edit" v-if="showEdit">
+        <div class="guess__edit-item" v-for="(item, index) in list" :key="item.gid">
+          <input type="text" v-model.trim="item.title" @blur="inputBlur(index)" maxlength="3">
+        </div>
+      </div>
+      <div class="guess__list" v-else>
         <div :class="['guess__list-item', item.select ? 'disable' : '']" v-for="item in list" :key="item.tid" @click="selectAnswer(item)">{{item.title}}</div>
       </div>
       <div class="guess__button-box">
@@ -57,6 +65,7 @@ export default {
   data() {
     return {
       showTip: false,
+      showEdit: false,
       answer: [{ id: 1, content: '', gid: null }, { id: 2, content: '', gid: null }, { id: 3, content: '', gid: null }],
       tryList: [],
       right: [],
@@ -220,11 +229,34 @@ export default {
         title: '提示',
         message,
         confirmButtonText: '重新开始',
+        closeOnClickModal: false,
       }).then(action => {
         if (action === 'confirm') {
           this.reset();
         }
       });
+    },
+    inputBlur(index) {
+      if (!this.list[index].title) {
+        this.list[index].title = this.list[index].defaultTitle;
+      }
+    },
+    // 编辑文字
+    edit() {
+      if (this.showEdit) {
+        this.showEdit = false;
+        return;
+      }
+      if (this.tryList.length > 0) {
+        this.$toast('请重新开始游戏后修改');
+        return;
+      }
+      const res = this.answer.some(item => item.gid);
+      if (res) {
+        this.$toast('请重新开始游戏后修改');
+        return;
+      }
+      this.showEdit = true;
     },
   },
   components: {
