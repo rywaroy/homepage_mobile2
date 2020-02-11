@@ -12,14 +12,14 @@
   padding: 10px 0;
 }
 
-.guess__answar {
+.guess__answer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 36px;
 }
 
-.guess__answar-item {
+.guess__answer-item {
   width: 200px;
   height: 80px;
   font-size: 32px;
@@ -76,6 +76,10 @@
   color: #Fff;
   background: #26a2ff;
   border-radius: 8px;
+}
+
+.guess__button.disable {
+  background: #ccc;
 }
 
 .guess__table {
