@@ -3,7 +3,7 @@
     <my-header title="猜物品"></my-header>
     <div class="m-content scroll" id="scroll">
       <div class="guess__tip">
-        <span class="guess__tip-link">游戏说明</span>
+        <span class="guess__tip-link" @click="getTip()">游戏说明</span>
       </div>
       <div class="guess__answar">
         <div class="guess__answar-item" v-for="item in answar" :key="item.id">{{item.content}}</div>
@@ -83,6 +83,12 @@ export default {
   mounted() {
   },
   methods: {
+    getTip() {
+      this.$msg({
+        title: '说明',
+        message: '1222\n222',
+      });
+    },
   },
   components: {
     MyHeader: Header,

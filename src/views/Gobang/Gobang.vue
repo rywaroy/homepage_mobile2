@@ -30,10 +30,10 @@
         </div>
       </div>
     </div>
-    <div class="gobang__tip-mask" v-if="showTip">
-      <div class="gobang__tip-box">
-        <div class="gobang__tip-title">游戏说明</div>
-        <div class="gobang__tip-content">
+    <div class="pop__tip-mask" v-if="showTip">
+      <div class="pop__tip-box">
+        <div class="pop__tip-title">游戏说明</div>
+        <div class="pop__tip-content">
           <p>五子棋2.0</p>
           <p></p>
           <p>1.大改逻辑，比16年版本提升50智商</p>
@@ -44,7 +44,7 @@
           <p>3.新增一种玩法：换子模式</p>
           <p>为了防止必胜开局，后手（白子）可以在第4手选择与对方交互棋子来破坏对方的优势开局（其实没什么用，我就判断了2个必胜开局，其他的微优势开局我也不在乎~）</p>
         </div>
-        <div class="gobang__tip-btn" @click="showTip = false">知道了</div>
+        <div class="pop__tip-btn" @click="showTip = false">知道了</div>
       </div>
     </div>
   </div>
