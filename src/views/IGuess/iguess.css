@@ -1,0 +1,56 @@
+.guess__tip {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+.guess__tip-link {
+  font-size: 32px;
+  line-height: 50px;
+  color: red;
+  padding: 10px 0;
+}
+
+.guess__answar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.guess__answar-item {
+  width: 200px;
+  height: 80px;
+  font-size: 32px;
+  display: flex;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  background: #FFCC99;
+  border-radius: 8px;
+}
+
+.guess__list-tip {
+  margin-top: 60px;
+  padding-left: 20px;
+}
+
+.guess__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.guess__list-item {
+  width: 200px;
+  height: 80px;
+  font-size: 32px;
+  display: flex;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #99CCFF;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
