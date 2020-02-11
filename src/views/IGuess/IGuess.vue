@@ -12,6 +12,28 @@
       <div class="guess__list">
         <div class="guess__list-item" v-for="item in list" :key="item.tid">{{item.title}}</div>
       </div>
+      <div class="guess__button-box">
+        <div class="guess__button">提交回答</div>
+      </div>
+      <div class="guess__table">
+        <table>
+          <tr>
+            <th>次数</th>
+            <th>内容</th>
+            <th>正确个数</th>
+            <th>位置正确个数</th>
+          </tr>
+          <tr v-for="(item, index) in tryList" :key="index">
+            <td>{{index + 1}}</td>
+            <td>{{item.content}}</td>
+            <td>{{item.rightNum}}</td>
+            <td>{{item.positionNum}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="guess__button-box">
+        <div class="guess__button">提交答案</div>
+      </div>
     </div>
   </div>
 </template>
@@ -23,6 +45,7 @@ export default {
   data() {
     return {
       answar: [{ id: 1, content: '', gid: null }, { id: 2, content: '', gid: null }, { id: 3, content: '', gid: null }],
+      tryList: [],
       list: [
         {
           gid: 1,
