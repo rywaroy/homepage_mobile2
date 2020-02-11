@@ -8,6 +8,7 @@
         <router-link tag="li" :to="{name: 'stupidBird'}" class="game__item stupidbird">stupid bird</router-link>
         <router-link tag="li" :to="{name: 'gobang'}" class="game__item gobang">五子棋2.0</router-link>
         <router-link tag="li" :to="{name: 'jump'}" class="game__item jump">Jump Jump</router-link>
+        <router-link tag="li" :to="{name: 'jump'}" class="game__item iguess">猜物品</router-link>
       </ul>
     </div>
   </div>
