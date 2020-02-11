@@ -131,7 +131,7 @@ export default {
     },
     // 洗牌
     shuffle() {
-      const list = [0, 1, 2, 3, 4, 5];
+      const list = [1, 2, 3, 4, 5, 6];
       for (let i = 5; i >= 0; i--) {
         const randomIndex = Math.floor(Math.random() * (i + 1));
         const itemAtIndex = list[randomIndex];
@@ -139,11 +139,12 @@ export default {
         list[randomIndex] = list[i];
         list[i] = itemAtIndex;
       }
-      const rightArr = [];
-      for (let i = 0; i < 3; i++) {
-        rightArr[i] = this.list[list[i]];
-      }
-      return rightArr;
+      return list.slice(0, 3);
+      // const rightArr = [];
+      // for (let i = 0; i < 3; i++) {
+      //   rightArr[i] = this.list[list[i]];
+      // }
+      // return rightArr;
     },
     // 选择答案
     selectAnswer(item) {
@@ -192,11 +193,11 @@ export default {
       let rightNum = 0;
       let positionNum = 0;
       for (let i = 0; i < this.answer.length; i++) {
-        if (this.answer[i].gid === this.right[i].gid) {
+        if (this.answer[i].gid === this.right[i]) {
           positionNum++;
         }
         for (let j = 0; j < this.right.length; j++) {
-          if (this.answer[i].gid === this.right[j].gid) {
+          if (this.answer[i].gid === this.right[j]) {
             rightNum++;
             break;
           }
@@ -216,14 +217,22 @@ export default {
         this.$toast('请将回答填写完整');
         return;
       }
-      const right = this.right.map(item => item.gid);
+      // const right = this.right.map(item => item.gid);
       const answer = this.answer.map(item => item.gid);
       let message = '';
-      if (JSON.stringify(right) === JSON.stringify(answer)) {
+      if (JSON.stringify(this.right) === JSON.stringify(answer)) {
         message = '厉害嗷，这你都推理出来了';
       } else {
-        const text = this.right.map(item => item.title).join(',');
-        message = `太菜了吧，正确答案是 ${text}`;
+        // const text = this.right.map(item => item.title).join(',');
+        const rightText = [];
+        for (let i = 0; i < this.right.length; i++) {
+          for (let j = 0; j < this.list.length; j++) {
+            if (this.right[i] === this.list[j].gid) {
+              rightText.push(this.list[j].title);
+            }
+          }
+        }
+        message = `太菜了吧，正确答案是 ${rightText.join(',')}`;
       }
       this.$msg({
         title: '提示',
