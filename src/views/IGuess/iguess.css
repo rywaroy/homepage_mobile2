@@ -58,6 +58,10 @@
   margin-bottom: 40px;
 }
 
+.guess__list-item.disable {
+  background: #ccc;
+}
+
 .guess__button-box {
   padding: 0 36px;
 }
