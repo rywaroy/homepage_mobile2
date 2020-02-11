@@ -20,6 +20,7 @@ import StupidBird from '@/views/StupidBird/StupidBird.vue';
 import Game from '@/views/Game/Game.vue';
 import Gobang from '@/views/Gobang/Gobang.vue';
 import Jump from '@/views/Jump/Jump.vue';
+import IGuess from '@/views/IGuess/IGuess.vue';
 
 Vue.use(Router);
 
@@ -223,6 +224,15 @@ export default new Router({
       meta: {
         level: 30,
         title: 'Jump Jump',
+      },
+    },
+    {
+      path: '/game/iguess',
+      name: '猜物品',
+      component: IGuess,
+      meta: {
+        level: 30,
+        title: '猜物品',
       },
     },
   ],
