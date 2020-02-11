@@ -228,7 +228,7 @@ export default new Router({
     },
     {
       path: '/game/iguess',
-      name: '猜物品',
+      name: 'iguess',
       component: IGuess,
       meta: {
         level: 30,
