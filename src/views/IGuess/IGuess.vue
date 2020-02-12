@@ -62,6 +62,7 @@
 import Header from '@/components/Header/Header.vue';
 
 export default {
+  name: 'iGuess',
   data() {
     return {
       showTip: false,
@@ -140,11 +141,6 @@ export default {
         list[i] = itemAtIndex;
       }
       return list.slice(0, 3);
-      // const rightArr = [];
-      // for (let i = 0; i < 3; i++) {
-      //   rightArr[i] = this.list[list[i]];
-      // }
-      // return rightArr;
     },
     // 选择答案
     selectAnswer(item) {
@@ -217,13 +213,11 @@ export default {
         this.$toast('请将回答填写完整');
         return;
       }
-      // const right = this.right.map(item => item.gid);
       const answer = this.answer.map(item => item.gid);
       let message = '';
       if (JSON.stringify(this.right) === JSON.stringify(answer)) {
         message = '厉害嗷，这你都推理出来了';
       } else {
-        // const text = this.right.map(item => item.title).join(',');
         const rightText = [];
         for (let i = 0; i < this.right.length; i++) {
           for (let j = 0; j < this.list.length; j++) {
