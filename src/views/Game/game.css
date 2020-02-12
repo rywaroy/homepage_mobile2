@@ -32,3 +32,7 @@
 .game__item.jump {
   background: #52de97;
 }
+
+.game__item.iguess {
+  background: #FF9900;
+}

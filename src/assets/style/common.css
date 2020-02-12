@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 32px;
 }
 
 html {
@@ -318,4 +319,58 @@ body {
   line-height: 60px;
   color: #999;
   margin-top: 20px;
+}
+
+.pop__tip-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, .5);
+}
+
+.pop__tip-box {
+  width: 500px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pop__tip-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  line-height: 40px;
+  color: #444;
+  height: 80px;
+  border-bottom: 1PX solid #e5e5e5;
+}
+
+.pop__tip-content {
+  padding: 0 30px;
+}
+
+.pop__tip-content p {
+  font-size: 30px;
+  line-height: 36px;
+  margin: 20px 0;
+  color: #444;
+}
+
+.pop__tip-btn {
+  height: 80px;
+  font-size: 32px;
+  line-height: 40px;
+  color: #89cff0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1PX solid #e5e5e5;
 }

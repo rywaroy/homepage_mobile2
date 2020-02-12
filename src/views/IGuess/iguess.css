@@ -1,0 +1,138 @@
+.guess__tip {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  margin-bottom: 40px;
+}
+
+.guess__tip-link {
+  font-size: 32px;
+  line-height: 50px;
+  color: red;
+  padding: 10px 0;
+}
+
+.guess__answer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 36px;
+}
+
+.guess__answer-item {
+  width: 200px;
+  height: 80px;
+  font-size: 32px;
+  display: flex;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  background: #FFCC99;
+  border-radius: 8px;
+}
+
+.guess__list-tip {
+  margin-top: 60px;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guess__list-tip .link {
+  color: #26a2ff;
+}
+
+.guess__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 36px;
+}
+
+.guess__list-item {
+  width: 200px;
+  height: 80px;
+  font-size: 32px;
+  display: flex;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #61d4b3;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.guess__list-item.disable {
+  background: #ccc;
+}
+
+.guess__button-box {
+  padding: 0 36px;
+}
+
+.guess__button {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  line-height: 1;
+  color: #Fff;
+  background: #26a2ff;
+  border-radius: 8px;
+}
+
+.guess__button.disable {
+  background: #ccc;
+}
+
+.guess__table {
+  margin-top: 40px;
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+
+.guess__table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 28px;
+}
+
+.guess__table th,
+.guess__table td {
+  border: 1PX solid #ccc;
+  margin: 0;
+  height: 40px;
+  text-align: center;
+}
+
+.guess__edit {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 36px;
+  flex-wrap: wrap;
+}
+
+.guess__edit-item {
+  width: 200px;
+  background: #fff;
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess__edit-item input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-size: 32px;
+  line-height: 40px;
+  outline: none;
+}
