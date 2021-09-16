@@ -21,6 +21,7 @@ import Game from '@/views/Game/Game.vue';
 import Gobang from '@/views/Gobang/Gobang.vue';
 import Jump from '@/views/Jump/Jump.vue';
 import IGuess from '@/views/IGuess/IGuess.vue';
+import Rotating from '@/views/Rotating/Rotating.vue';
 
 Vue.use(Router);
 
@@ -233,6 +234,15 @@ export default new Router({
       meta: {
         level: 30,
         title: '猜物品',
+      },
+    },
+    {
+      path: '/game/rotating',
+      name: 'rotating',
+      component: Rotating,
+      meta: {
+        level: 30,
+        title: '旋转拼图',
       },
     },
   ],
