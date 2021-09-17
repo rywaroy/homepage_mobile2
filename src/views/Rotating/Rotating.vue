@@ -40,6 +40,7 @@ export default {
       type: 4,
       list: [],
       colors,
+      isAnimation: false,
     };
   },
   created() {
@@ -91,9 +92,30 @@ export default {
       }
     },
     change(i, j) {
+      if (this.isAnimation) {
+        return;
+      }
+      this.isAnimation = true;
       this.animation(i, j);
       setTimeout(() => {
         this.run(i, j);
+        if (this.veri()) {
+          this.$msg({
+            message: '牛啊',
+            confirmButtonText: '重新开始',
+            cancelButtonText: '离开',
+            showCancelButton: true,
+          }).then(action => {
+            if (action === 'confirm') {
+              this.create();
+              this.disrupt();
+            }
+            if (action === 'cancel') {
+              this.$router.go(-1);
+            }
+          });
+        }
+        this.isAnimation = false;
       }, 300);
     },
     animation(i, j) {
@@ -101,6 +123,20 @@ export default {
       this.list[i][j + 1].animation = 'r2';
       this.list[i + 1][j + 1].animation = 'r3';
       this.list[i + 1][j].animation = 'r4';
+    },
+    veri() {
+      for (let i = 0; i < this.list.length; i += 2) {
+        for (let j = 0; j < this.list[i].length; j += 2) {
+          const color = this.list[i][j].color;
+          if (color !== this.list[i][j + 1].color
+            || color !== this.list[i + 1][j].color
+            || color !== this.list[i + 1][j + 1].color
+          ) {
+            return false;
+          }
+        }
+      }
+      return true;
     },
   },
 };
