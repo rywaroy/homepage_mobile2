@@ -5,7 +5,11 @@
       <div class="c-rotating__container">
         <div class="c-rotating__box">
           <div v-for="(row, index) in list" :key="index" class="c-rotating__box-line">
-            <div v-for="(col, i) in row" :key="i" :style="{ backgroundColor: col}" class="c-rotating__block"></div>
+            <div
+              v-for="(col, i) in row"
+              :key="i"
+              :style="{ backgroundColor: col.color }"
+              :class="['c-rotating__block', col.animation ? col.animation : '']"></div>
           </div>
         </div>
         <div class="c-rotating__btns">
@@ -48,7 +52,10 @@ export default {
       for (let i = 0; i < this.type; i++) {
         list[i] = [];
         for (let j = 0; j < this.type; j++) {
-          list[i].push(this.colors[i][j]);
+          list[i].push({
+            color: this.colors[i][j],
+            animation: false,
+          });
         }
       }
       this.list = list;
@@ -65,6 +72,10 @@ export default {
       const b2 = this.list[i][j + 1];
       const b3 = this.list[i + 1][j + 1];
       const b4 = this.list[i + 1][j];
+      b1.animation = false;
+      b2.animation = false;
+      b3.animation = false;
+      b4.animation = false;
       const list = JSON.parse(JSON.stringify(this.list));
       list[i][j] = b4;
       list[i][j + 1] = b1;
@@ -80,7 +91,16 @@ export default {
       }
     },
     change(i, j) {
-      this.run(i, j);
+      this.animation(i, j);
+      setTimeout(() => {
+        this.run(i, j);
+      }, 300);
+    },
+    animation(i, j) {
+      this.list[i][j].animation = 'r1';
+      this.list[i][j + 1].animation = 'r2';
+      this.list[i + 1][j + 1].animation = 'r3';
+      this.list[i + 1][j].animation = 'r4';
     },
   },
 };
