@@ -10,7 +10,13 @@
         </div>
         <div class="c-rotating__btns">
           <div v-for="(row, i) in btns" :key="i" class="c-rotating__btns-line">
-            <div v-for="(col, j) in row" :key="j" class="c-rotating__btn" :style="{ left: `${j + 1.5}rem`, top: `${i + 1.5}rem`}"></div>
+            <div
+              v-for="(col, j) in row"
+              :key="j"
+              class="c-rotating__btn"
+              :style="{ left: `${j + 1.5}rem`, top: `${i + 1.5}rem`}"
+              @click="change(i, j)">
+            </div>
           </div>
         </div>
       </div>
@@ -38,13 +44,14 @@ export default {
   },
   methods: {
     create() {
-      this.list = [];
+      const list = [];
       for (let i = 0; i < this.type; i++) {
-        this.list[i] = [];
+        list[i] = [];
         for (let j = 0; j < this.type; j++) {
-          this.list[i].push(this.colors[i][j]);
+          list[i].push(this.colors[i][j]);
         }
       }
+      this.list = list;
       this.btns = [];
       for (let i = 0; i < this.type - 1; i++) {
         this.btns[i] = [];
@@ -58,10 +65,12 @@ export default {
       const b2 = this.list[i][j + 1];
       const b3 = this.list[i + 1][j + 1];
       const b4 = this.list[i + 1][j];
-      this.list[i][j] = b4;
-      this.list[i][j + 1] = b1;
-      this.list[i + 1][j + 1] = b2;
-      this.list[i + 1][j] = b3;
+      const list = JSON.parse(JSON.stringify(this.list));
+      list[i][j] = b4;
+      list[i][j + 1] = b1;
+      list[i + 1][j + 1] = b2;
+      list[i + 1][j] = b3;
+      this.list = list;
     },
     disrupt() {
       for (let k = 0; k < this.type * 5; k++) {
@@ -69,6 +78,9 @@ export default {
         const j = Math.floor(Math.random() * (this.type - 1));
         this.run(i, j);
       }
+    },
+    change(i, j) {
+      this.run(i, j);
     },
   },
 };
