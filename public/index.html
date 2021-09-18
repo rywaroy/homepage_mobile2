@@ -9,113 +9,6 @@
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title>主页</title>
   <style>
-    /* .loading {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      z-index: 99;
-      display: flex;
-      flex-wrap: wrap;
-      background: #79b6d5;
-      opacity: 1;
-      transition: opacity .5s;
-    }
-
-    .loading.hide {
-      opacity: 0;
-    }
-
-    .loading__car-box {
-      width: 100%;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      border-bottom: 1PX solid #fff;
-      z-index: 5;
-    }
-
-    .loading__car {
-      margin: 0 auto;
-      width: 64px;
-      position: relative;
-    }
-
-    .loading__car-left {
-      width: 14px;
-      height: 14px;
-      background: #fff;
-      border-radius: 50%;
-      position: absolute;
-      left: 6px;
-      bottom: -3px;
-      animation: circle 1.5s infinite linear;
-    }
-
-    .loading__car-left::after {
-      content: ' ';
-      width: 7px;
-      height: 1px;
-      background: #79b6d5;
-      position: absolute;
-      top: 7px;
-      right: 0;
-    }
-
-    .loading__car-right {
-      width: 14px;
-      height: 14px;
-      background: #fff;
-      border-radius: 50%;
-      position: absolute;
-      right: 4px;
-      bottom: -3px;
-      animation: circle 1.5s infinite linear;
-    }
-
-    .loading__car-right::after {
-      content: ' ';
-      width: 7px;
-      height: 1px;
-      background: #79b6d5;
-      position: absolute;
-      top: 7px;
-      left: 0;
-    }
-
-    .loading__car-body {
-      width: 64px;
-      height: 31px;
-      background: url(https://static.zzh.cool/car.png) no-repeat;
-      background-size: contain;
-      animation: shock 1.5s infinite linear;
-    }
-
-    @keyframes circle {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes shock {
-      0% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-2px);
-      }
-
-      100% {
-        transform: translateY(0);
-      }
-    } */
     .loading {
       position: absolute;
       left: 0;
@@ -127,54 +20,275 @@
     }
     .loading__animation {
       position: absolute;
-      left: 50%;
-      top: 50%;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 1;
+      transition: opacity .5s;
     }
+    .loading__animation.hide {
+      opacity: 0;
+    }
+    .loading__animation-overlay {
+      width: 150px;
+      height: 150px;
+      background: transparent;
+      box-shadow: 0px 0px 0px 1000px rgb(255 255 255 / 40%), 0px 0px 19px 0px rgb(0 0 0 / 16%) inset;
+      border-radius: 100%;
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .loading__animation-box {
+      transition: transform .5s, opacity .5s;
+    }
+    .loading__animation.hide .loading__animation-box {
+      transform: scale(0.3) translateY(300px);
+      opacity: 0;
+    }
+    .loading__animation.hide .loading__animation-overlay {
+      opacity: 0;
+    }
+    .loading__animation-cogs {
+      z-index: -2;
+      width: 100px;
+      height: 100px;
+      top: -120px !important;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .loading__animation-top {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      transform-origin: 50px 50px;
+      -webkit-animation: rotate 10s infinite linear;
+      animation: rotate 10s infinite linear;
+    }
+    .loading__animation-top-part {
+      width: 100px;
+      border-radius: 10px;
+      position: absolute;
+      height: 100px;
+      background: #f98db9;
+    }
+    .loading__animation-top-part:nth-of-type(1) {
+      transform: rotate(30deg);
+    }
+    .loading__animation-top-part:nth-of-type(2) {
+      transform: rotate(60deg);
+    }
+    .loading__animation-top-part:nth-of-type(3) {
+      transform: rotate(90deg);
+    }
+    .loading__animation-top-hole {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      background: white;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .loading__animation-left {
+      position: relative;
+      width: 80px;
+      transform: rotate(16deg);
+      top: 28px;
+      transform-origin: 40px 40px;
+      animation: rotate_left 10s 0.1s infinite reverse linear;
+      left: -24px;
+      height: 80px;
+    }
+    .loading__animation-left-part {
+      width: 80px;
+      border-radius: 6px;
+      position: absolute;
+      height: 80px;
+      background: #97ddff;
+    }
+    .loading__animation-left-part:nth-of-type(1) {
+      transform: rotate(30deg);
+    }
+    .loading__animation-left-part:nth-of-type(2) {
+      transform: rotate(60deg);
+    }
+    .loading__animation-left-part:nth-of-type(3) {
+      transform: rotate(90deg);
+    }
+    .loading__animation-left-hole {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      background: white;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .loading__animation-bottom {
+      position: relative;
+      width: 60px;
+      top: -65px;
+      transform-origin: 30px 30px;
+      -webkit-animation: rotate_left 10.2s 0.4s infinite linear;
+      animation: rotate_left 10.2s 0.4s infinite linear;
+      transform: rotate(4deg);
+      left: 79px;
+      height: 60px;
+    }
+    .loading__animation-bottom-part {
+      width: 60px;
+      border-radius: 5px;
+      position: absolute;
+      height: 60px;
+      background: #ffcd66;
+    }
+    .loading__animation-bottom-part:nth-of-type(1) {
+      transform: rotate(30deg);
+    }
+    .loading__animation-bottom-part:nth-of-type(2) {
+      transform: rotate(60deg);
+    }
+    .loading__animation-bottom-part:nth-of-type(3) {
+      transform: rotate(90deg);
+    }
+    .loading__animation-bottom-hole {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      background: white;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    @-webkit-keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes rotate_left {
+      from {
+        transform: rotate(16deg);
+      }
+      to {
+        transform: rotate(376deg);
+      }
+    }
+    @keyframes rotate_left {
+      from {
+        transform: rotate(16deg);
+      }
+      to {
+        transform: rotate(376deg);
+      }
+    }
+    .loading__animation-text {
+      text-align: center;
+    }
+    .loading__animation-bar {
+      width: 100%;
+      height: 30px;
+      border-radius: 5px;
+      background-color: #f5c1db;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .loading__animation-bar span {
+      position: relative;
+      z-index: 2;
+      font-size: 14px !important;
+      line-height: 30px;
+      color: #fff;
+    }
+    .loading__animation-progress {
+      position: absolute;
+      height: 30px;
+      background-color: #e77977;
+      width: 0;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+    
   </style>
 </head>
 
 <body>
   <div id="app"></div>
-  <!-- <div class="loading" id="loading">
-    <div class="loading__car-box">
-      <div class="loading__car">
-        <div class="loading__car-body"></div>
-        <div class="loading__car-left"></div>
-        <div class="loading__car-right"></div>
-      </div>
-    </div>
-  </div> -->
   <div class="loading" id="loading">
     <canvas class="loading__canvas" id="canvas"></canvas>
-    <div class="loading__animation">
+    <div class="loading__animation" id="animation">
+      <div class="loading__animation-overlay"></div>
+      <div class="loading__animation-cogs">
+        <div class="loading__animation-box">
+          <div class="loading__animation-top">
+            <div class="loading__animation-top-part"></div>
+            <div class="loading__animation-top-part"></div>
+            <div class="loading__animation-top-part"></div>
+            <div class="loading__animation-top-hole"></div>
+          </div>
+          <div class="loading__animation-left">
+            <div class="loading__animation-left-part"></div>
+            <div class="loading__animation-left-part"></div>
+            <div class="loading__animation-left-part"></div>
+            <div class="loading__animation-left-hole"></div>
+          </div>
+          <div class="loading__animation-bottom">
+            <div class="loading__animation-bottom-part"></div>
+            <div class="loading__animation-bottom-part"></div>
+            <div class="loading__animation-bottom-part"></div>
+            <div class="loading__animation-bottom-hole"></div>
+          </div>
+        </div>
+        <div class="loading__animation-bar">
+          <span>加载中</span>
+          <div class="loading__animation-progress" id="progress"></div>
+        </div>
+      </div>
     </div>
   </div>
   <script>
 
     function LoadingWork() {
       this.canvas = document.getElementById('canvas')
+      this.progress = document.getElementById('progress')
       this.ctx = this.canvas.getContext('2d')
       this.width = window.innerWidth
       this.height = window.innerHeight
       this.canvas.width = this.width
       this.canvas.height = this.height
       this.colors = ['#48cae4', '#f77f00', '#ffddd2', '#cbdfbd']
-
-      // this.drawTrapezoid(this.width / 4, 0, [
-      //   { x: this.width / 4 * 3, y: 0 },
-      //   { x: this.width, y: this.width / 4 },
-      //   { x: this.width, y: this.width / 4 * 3 },
-      //   { x: this.width / 3 * 2, y: 0 },
-      // ], 'red')
-
-      // this.drawTrapezoid(-this.width / 4, 0, [
-      //   { x: this.width / 4, y: 0 },
-      //   { x: this.width + this.width / 4, y: this.width },
-      //   { x: this.width, y: this.width },
-      // ], 'red')
-      // this.move()
-      this.draw(20, 10)
-      
+      this.move()
     }
 
     LoadingWork.prototype.drawTrapezoid = function(pointX, pointY, lines, color) {
@@ -213,10 +327,16 @@
 
     LoadingWork.prototype.move = function() {
       this.offset = 0;
+      this.w = 0
       var that = this;
       function work() {
         that.draw(that.offset)
         that.offset += 4
+        that.w += 1
+        if (that.w >= 90) {
+          that.w = 90
+        }
+        that.progress.style.width = that.w + '%'
         that.timer = requestAnimationFrame(work)
       }
       this.timer = requestAnimationFrame(work)
@@ -226,6 +346,8 @@
       if (this.timer) {
         cancelAnimationFrame(this.timer)
       }
+      this.progress.style.width = 100 + '%'
+      document.getElementById('animation').classList.add('hide')
       var that = this;
       let h = 0
       let d = 10
@@ -235,7 +357,9 @@
         d += 2
         that.showTimer = requestAnimationFrame(work)
       }
-      this.showTimer = requestAnimationFrame(work)
+      setTimeout(function() {
+        that.showTimer = requestAnimationFrame(work)
+      }, 500)
     }
 
     LoadingWork.prototype.destroy = function() {
@@ -249,13 +373,6 @@
     }
    
     window.loadingWork = new LoadingWork()
-
-    // setTimeout(() => {
-    //   loadingWork.show()
-    // }, 2000)
-    // setTimeout(() => {
-    //   loadingWork.destroy()
-    // }, 4000)
     
   </script>
   <!-- built files will be auto injected -->
