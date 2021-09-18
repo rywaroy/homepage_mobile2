@@ -2,7 +2,7 @@
   <div>
     <my-header title="旋转拼图" :back="true"></my-header>
     <div class="m-content c-rotating__content">
-      <div class="c-rotating__container">
+      <div :class="`c-rotating__container type${type}`">
         <div class="c-rotating__box">
           <div v-for="(row, index) in list" :key="index" class="c-rotating__box-line">
             <div
@@ -18,7 +18,6 @@
               v-for="(col, j) in row"
               :key="j"
               class="c-rotating__btn"
-              :style="{ left: `${j + 1.5}rem`, top: `${i + 1.5}rem`}"
               @click="change(i, j)">
             </div>
           </div>
@@ -37,7 +36,7 @@ export default {
   },
   data() {
     return {
-      type: 4,
+      type: 6,
       list: [],
       colors,
       isAnimation: false,

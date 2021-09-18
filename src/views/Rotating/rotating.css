@@ -74,3 +74,49 @@
   transform-origin: 150px 0;
   transition: transform .3s;
 }
+
+.c-rotating__container.type6 .c-rotating__block {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  font-size: 0;
+}
+
+.c-rotating__container.type6 .c-rotating__btns {
+  padding-top: 50px;
+}
+
+.c-rotating__container.type6 .c-rotating__btns-line {
+  height: 108px;
+  padding: 0 50px;
+}
+
+.c-rotating__container.type6 .c-rotating__btn {
+  width: 50px;
+  height: 50px;
+}
+
+.c-rotating__container.type6 .c-rotating__block.r1 {
+  transform: rotate(90deg);
+  transform-origin: 100px 100px;
+  transition: transform .3s;
+}
+
+.c-rotating__container.type6 .c-rotating__block.r2 {
+  transform: rotate(90deg);
+  transform-origin: 0 100px;
+  transition: transform .3s;
+}
+
+.c-rotating__container.type6 .c-rotating__block.r3 {
+  transform: rotate(90deg);
+  transform-origin: 0 0;
+  transition: transform .3s;
+}
+
+.c-rotating__container.type6 .c-rotating__block.r4 {
+  transform: rotate(90deg);
+  transform-origin: 100px 0;
+  transition: transform .3s;
+}
