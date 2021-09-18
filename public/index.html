@@ -9,7 +9,7 @@
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title>主页</title>
   <style>
-    .loading {
+    /* .loading {
       position: absolute;
       left: 0;
       right: 0;
@@ -115,13 +115,27 @@
       100% {
         transform: translateY(0);
       }
+    } */
+    .loading {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: 99;
+      /* background-color: #fff; */
+    }
+    .loading__animation {
+      position: absolute;
+      left: 50%;
+      top: 50%;
     }
   </style>
 </head>
 
 <body>
   <div id="app"></div>
-  <div class="loading" id="loading">
+  <!-- <div class="loading" id="loading">
     <div class="loading__car-box">
       <div class="loading__car">
         <div class="loading__car-body"></div>
@@ -129,7 +143,121 @@
         <div class="loading__car-right"></div>
       </div>
     </div>
+  </div> -->
+  <div class="loading" id="loading">
+    <canvas class="loading__canvas" id="canvas"></canvas>
+    <div class="loading__animation">
+    </div>
   </div>
+  <script>
+
+    function LoadingWork() {
+      this.canvas = document.getElementById('canvas')
+      this.ctx = this.canvas.getContext('2d')
+      this.width = window.innerWidth
+      this.height = window.innerHeight
+      this.canvas.width = this.width
+      this.canvas.height = this.height
+      this.colors = ['#48cae4', '#f77f00', '#ffddd2', '#cbdfbd']
+
+      // this.drawTrapezoid(this.width / 4, 0, [
+      //   { x: this.width / 4 * 3, y: 0 },
+      //   { x: this.width, y: this.width / 4 },
+      //   { x: this.width, y: this.width / 4 * 3 },
+      //   { x: this.width / 3 * 2, y: 0 },
+      // ], 'red')
+
+      // this.drawTrapezoid(-this.width / 4, 0, [
+      //   { x: this.width / 4, y: 0 },
+      //   { x: this.width + this.width / 4, y: this.width },
+      //   { x: this.width, y: this.width },
+      // ], 'red')
+      // this.move()
+      this.draw(20, 10)
+      
+    }
+
+    LoadingWork.prototype.drawTrapezoid = function(pointX, pointY, lines, color) {
+      this.ctx.beginPath();
+      this.ctx.moveTo(pointX, pointY);
+      for (var i = 0; i < lines.length; i++) {
+        var x = lines[i].x;
+        var y = lines[i].y;
+        this.ctx.lineTo(x, y);
+      }
+      this.ctx.fillStyle = color
+      this.ctx.fill();
+    }
+
+    LoadingWork.prototype.draw = function (offset, h = 0) {
+      this.ctx.clearRect(0, 0, this.width, this.height);
+      let l = this.width * 0.6
+      for (let i = 0; i < 18; i++) {
+        const x = -(8 * this.width) + i * l + offset
+        if (i % 2 === 0) {
+          this.drawTrapezoid(x + h, h, [
+            { x: x + l + h, y: h },
+            { x: x + this.height + l, y: this.height },
+            { x: x + this.height, y: this.height },
+          ], this.colors[i % 4])
+        } else {
+          this.drawTrapezoid(x, 0, [
+            { x: x + l, y: 0 },
+            { x: x + this.height + l - h, y: this.height - h },
+            { x: x + this.height - h, y: this.height - h },
+          ], this.colors[i % 4])
+        }
+        
+      }
+    }
+
+    LoadingWork.prototype.move = function() {
+      this.offset = 0;
+      var that = this;
+      function work() {
+        that.draw(that.offset)
+        that.offset += 4
+        that.timer = requestAnimationFrame(work)
+      }
+      this.timer = requestAnimationFrame(work)
+    }
+
+    LoadingWork.prototype.show = function() {
+      if (this.timer) {
+        cancelAnimationFrame(this.timer)
+      }
+      var that = this;
+      let h = 0
+      let d = 10
+      function work() {
+        that.draw(that.offset, h)
+        h += d
+        d += 2
+        that.showTimer = requestAnimationFrame(work)
+      }
+      this.showTimer = requestAnimationFrame(work)
+    }
+
+    LoadingWork.prototype.destroy = function() {
+      if (this.timer) {
+        cancelAnimationFrame(this.timer)
+      }
+      if (this.showTimer) {
+        cancelAnimationFrame(this.showTimer)
+      }
+      document.getElementById('loading').remove()
+    }
+   
+    window.loadingWork = new LoadingWork()
+
+    // setTimeout(() => {
+    //   loadingWork.show()
+    // }, 2000)
+    // setTimeout(() => {
+    //   loadingWork.destroy()
+    // }, 4000)
+    
+  </script>
   <!-- built files will be auto injected -->
 </body>
 
