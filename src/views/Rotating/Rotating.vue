@@ -2,6 +2,10 @@
   <div>
     <my-header title="旋转拼图" :back="true"></my-header>
     <div class="m-content c-rotating__content">
+      <div class="c-rotating__type">
+        <div class="c-rotating__type-btn" @click="restart(4)">4x4模式</div>
+        <div class="c-rotating__type-btn" @click="restart(6)">6x6模式</div>
+      </div>
       <div :class="`c-rotating__container type${type}`">
         <div class="c-rotating__box">
           <div v-for="(row, index) in list" :key="index" class="c-rotating__box-line">
@@ -43,10 +47,14 @@ export default {
     };
   },
   created() {
-    this.create();
-    this.disrupt();
+    this.restart(4);
   },
   methods: {
+    restart(type) {
+      this.type = type;
+      this.create();
+      this.disrupt();
+    },
     create() {
       const list = [];
       for (let i = 0; i < this.type; i++) {
