@@ -24,11 +24,11 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      document.getElementById('loading').classList.add('hide');
-    }, 1000);
-    setTimeout(() => {
-      document.getElementById('loading').remove();
+      window.loadingWork.show();
     }, 1500);
+    setTimeout(() => {
+      window.loadingWork.destroy();
+    }, 4000);
     apiGetBase();
   },
   methods: {

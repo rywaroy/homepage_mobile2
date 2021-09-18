@@ -36,3 +36,7 @@
 .game__item.iguess {
   background: #FF9900;
 }
+
+.game__item.rotating {
+  background: #9B89B3;
+}
