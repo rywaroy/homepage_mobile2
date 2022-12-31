@@ -80,3 +80,11 @@
   background: url('./images/like_icon_active.png') no-repeat left center;
   background-size: 26px 26px;
 }
+
+.article__time {
+  font-size: 14px;
+}
+
+.article__time span {
+  font-size: 14px;
+}

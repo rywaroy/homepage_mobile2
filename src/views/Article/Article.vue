@@ -17,7 +17,7 @@
         <div class="scroll-wrapper">
           <ul class="article__list">
             <router-link tag="li" :to="{path:`/article/${item.id}`}" v-for="(item,index) in list" :key="index" class="article__item">
-              <div class="article__img bg-cover" :style="{backgroundImage: `url(${item.img})`}"></div>
+              <div class="article__img bg-cover" :style="{backgroundImage: `url(${item.img ? item.img : img})`}"></div>
               <div class="article__info">
                 <h3 class="article__title">{{item.title}}</h3>
                 <p class="article__intro">{{item.intro}}</p>
@@ -37,10 +37,16 @@
 <script>
 import Header from '@/components/Header/Header.vue';
 import mixinList from '@/mixins/list';
+import img from './images/img.jpg';
 import { apiGetArticle } from '@/api/api';
 
 export default {
   mixins: [mixinList],
+  data() {
+    return {
+      img,
+    };
+  },
   mounted() {
     this.getList();
   },
@@ -50,10 +56,19 @@ export default {
         page: this.page,
         limit: this.limit,
       }).then(res => {
+        const list = res.data.data.list;
+        list.forEach(item => {
+          if (!item.tag) {
+            item.tag = {
+              title: '日志',
+              color: '#666666',
+            };
+          }
+        });
         if (this.page === 1) {
-          this.list = res.data.data.list;
+          this.list = list;
         } else {
-          this.list = this.list.concat(res.data.data.list);
+          this.list = this.list.concat(list);
         }
         this.total = res.data.data.total;
       });
